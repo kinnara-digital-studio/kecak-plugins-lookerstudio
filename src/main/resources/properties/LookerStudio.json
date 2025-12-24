@@ -14,8 +14,8 @@
         "value": "looker"
       },
       {
-        "name": "label",
-        "label": "Label",
+        "name": "reportName",
+        "label": "Report Name",
         "type": "textfield",
         "required": "true",
         "value": "Looker Report"
@@ -26,19 +26,6 @@
         "type": "textfield",
         "required": "true",
         "description": "Paste the Looker Studio Embed URL (use Embed > Embed URL in Looker Studio). Example: https://lookerstudio.google.com/embed/reporting/REPORT_ID/page/PAGE_ID"
-      },
-      {
-        "name": "allowFullScreen",
-        "label": "Allow Fullscreen",
-        "type": "checkbox",
-        "options": [{"value":"true","label":"Yes"}]
-      },
-      {
-        "name": "secureEmbed",
-        "label": "Secure Embed (private report)",
-        "type": "checkbox",
-        "options": [{"value":"true","label":"Yes - report is not public"}],
-        "description": "If the report is private, set this to true and implement server-side authentication or use users' Google accounts to view the report."
       }
     ]
   }

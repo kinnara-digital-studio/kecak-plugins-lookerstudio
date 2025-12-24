@@ -28,15 +28,14 @@ public class LookerStudio extends UserviewMenu implements PluginWebSupport {
         PluginManager pluginManager = (PluginManager) appContext.getBean("pluginManager");
 
         final String template = "/templates/LookerView.ftl";
+        UserviewMenu userviewMenu = getUserview().getCurrent();
 
         final Map<String, Object> model = new HashMap<>();
         model.put("className", getClassName());
-        final String embedUrl = getUserview().getCurrent().getPropertyString("embedUrl");
+        final String embedUrl = userviewMenu.getPropertyString("embedUrl");
         model.put("embedUrl", embedUrl);
-        final String secureEmbed = getUserview().getCurrent().getPropertyString("secureEmbed");
-        model.put("secureEmbed", secureEmbed);
-        final String allowFullScreen = getUserview().getCurrent().getPropertyString("allowFullScreen");
-        model.put("allowFullScreen", allowFullScreen);
+        final String reportName = userviewMenu.getPropertyString("reportName");
+        model.put("reportName", reportName);
 
         return pluginManager.getPluginFreeMarkerTemplate(model, getClass().getName(), template, null);
     }
